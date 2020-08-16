@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algum Nome</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <script rel="text/javascript" src="javascript/main.js"></script>
+</head>
+<body>
+    <header id="myHeader">
+        <h1>CalmClick</h1>
+        <button class="btn" id="btnPause" onclick="MoverMenu()">
+            <img src="imagens/flecha.png" alt="Abrir Menu">
+            <span>Pause</span>
+        </button>
+        <div class="dropdown">
+            <button class="btn" id="dropbtn" onclick="DroparMenu()" >
+                <img src="imagens/flecha.png" alt="Abrir Pontuacao">
+                <span>Record</span> 
+            </button>
+            <div id="myDropdown" class="dropdown-content">
+                <p id="suaPontuacao">Your Score: <span id="pontuacaoAtual">00</span></p>
+                <input type="text" placeholder="Digite seu nome!" id="myInput">
+                <button id="salvar" class="btn" onclick="SalvarRecord()">Save</button>
+                <ol id="recordSalvo">
+                    <li class="recordLinha"><span>Nome</span>   <span>Pontuação</span></li>
+                    <li class="recordLinha"><span>Nome</span>   <span>Pontuação</span></li>
+                    <li class="recordLinha"><span>Nome</span>   <span>Pontuação</span></li>
+                    <li class="recordLinha"><span>Nome</span>   <span>Pontuação</span></li>
+                    <li class="recordLinha"><span>Nome</span>   <span>Pontuação</span></li>
+                </ol>
+            </div>
+        </div>
+        <p>Score: <span id="pontos">00</span></p>
+        <p>Speed: 1/<span id="velocidade">1000</span>ms</p>
+        <ul class="vidas"> 
+            <li>Vidas:</li>
+            <li class="coracoes"><img id="coracao1" src="imagens/coracao.png" alt="coracao"></li>
+            <li class="coracoes"><img id="coracao2" src="imagens/coracao.png" alt="coracao"></li>
+            <li class="coracoes"><img id="coracao3" src="imagens/coracao.png" alt="coracao"></li>
+        </ul>
+    </header>
+    <div class="areaInteracao">
+        <div id="jogo" class="areaJogo">
+        </div>
+        <div class="fundoEscuro" id="fundoEsc">
+            <img id="btnPlay" src="imagens/play.png" alt="play" onclick="IniciarJogo()">
+        </div>
+    </div>
+</body>
+</html>
