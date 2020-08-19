@@ -1,4 +1,4 @@
-var intervalo1, intervalo2, tempo = 1000, pontos, id = 0, vidas, nome, data,pause = false;
+var intervalo1, intervalo2, tempo = 1000, pontos, id = 0, vidas, nome, data,pause = false, clicked = false;
 function MoverMenu(){
     pause = true;
     document.getElementById("myHeader").style.top = "0px";
@@ -16,6 +16,7 @@ function IniciarJogo(){
     } else{
         pontos = 0;
         document.getElementById('pontos').innerHTML = String(pontos);
+        InsertHearts();
         vidas = 3;
         document.getElementById("myHeader").style.top = "-75px";
         document.getElementById("fundoEsc").style.visibility = "hidden";
@@ -69,9 +70,24 @@ function FimDeJogo(){
 }
 
 function DroparMenu(){
-    document.getElementById("myDropdown").classList.toggle("show");
+    if (clicked == false){
+        document.getElementById("myDropdown").style.display = "block";
+        clicked = true;
+    } else{
+        document.getElementById("myDropdown").style.display = "none";
+        clicked = false;
+    }
 }
 
 function SalvarRecord(){
     nome = document.getElementById("myInput").value;
+}
+
+function InsertHearts(){
+    for (let index = 1; index <= 3; index++) {
+        var img = document.createElement("img");
+        img.id = "coracao" + String(index);
+        img.src = "imagens/coracao.png";
+        document.getElementById("ItemHeart" + String(index)).appendChild(img);
+    }
 }

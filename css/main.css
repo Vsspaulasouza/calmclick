@@ -96,10 +96,6 @@ header #btnPause{
     padding: 5px 0px;
 }
 
-.show{
-    display: block;
-}
-
 header .vidas{
     background-color: rgba(241,239,242,.5);
     list-style-type: none;
