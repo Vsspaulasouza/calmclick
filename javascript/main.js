@@ -1,75 +1,75 @@
-var intervalo1, intervalo2, tempo = 1000, pontos, id = 0, vidas, nome, data,pause = false, clicked = false;
-function MoverMenu(){
+var createStarInterval, deleteStarInterval, points, id = 0, lives, name, pause = false, clicked = false;
+function MoveMenu(){
     pause = true;
     document.getElementById("myHeader").style.top = "0px";
-    document.getElementById("fundoEsc").style.visibility = "unset";
-    clearInterval(intervalo1);
+    document.getElementById("darkBackground").style.visibility = "unset";
+    clearInterval(createStarInterval);
 }
 
-function IniciarJogo(){
+function StartGame(){
     if(pause == true){
         document.getElementById("myHeader").style.top = "-75px";
-        document.getElementById("fundoEsc").style.visibility = "hidden";
+        document.getElementById("darkBackground").style.visibility = "hidden";
         document.getElementById("myDropdown").style.display = "none";
         pause = false;
-        intervalo1 = setInterval(AdicionarEstrela,tempo);
+        createStarInterval = setInterval(AddStar,1000);
     } else{
-        pontos = 0;
-        document.getElementById('pontos').innerHTML = String(pontos);
+        points = 0;
+        document.getElementById('userScore').innerHTML = String(points);
         InsertHearts();
-        vidas = 3;
+        lives = 3;
         document.getElementById("myHeader").style.top = "-75px";
-        document.getElementById("fundoEsc").style.visibility = "hidden";
+        document.getElementById("darkBackground").style.visibility = "hidden";
         document.getElementById("myDropdown").style.display = "none";
-        intervalo1 = setInterval(AdicionarEstrela,tempo);
+        createStarInterval = setInterval(AddStar,1000);
     }
 }
 
-function AdicionarEstrela(){
-    var varEstrela = document.createElement('img');
-    varEstrela.id = 'estrela' + toString(id);
-    varEstrela.className = 'estrela';
-    varEstrela.src = "imagens/estrela.png";
-    var n1, n2;
-    n1 = Math.floor(Math.random() * 430 + 1);
-    toString(n1);
-    varEstrela.style.marginTop = n1 + 'px';
-    n2 = Math.floor(Math.random() * 90 + 1);
-    toString(n2);
-    varEstrela.style.marginLeft = n2 + '%';
-    varEstrela.onclick = function(){
-        document.getElementById(varEstrela.id).src = "imagens/estrelacinza.png";
-        pontos++;
-        document.getElementById('pontos').innerHTML = String(pontos);
+function AddStar(){
+    var varStar = document.createElement('img');
+    varStar.id = 'star' + toString(id);
+    varStar.className = 'star';
+    varStar.src = "images/star.png";
+    var marginTop, marginLeft;
+    marginTop = Math.floor(Math.random() * 430 + 1);
+    toString(marginTop);
+    varStar.style.marginTop = marginTop + 'px';
+    marginLeft = Math.floor(Math.random() * 90 + 1);
+    toString(marginLeft);
+    varStar.style.marginLeft = marginLeft + '%';
+    varStar.onclick = function(){
+        document.getElementById(varStar.id).src = "images/graystar.png";
+        points++;
+        document.getElementById('userScore').innerHTML = String(points);
     };
-    document.getElementById("jogo").appendChild(varEstrela);
-    intervalo2 = setTimeout(ApagarEstrela,1000,varEstrela.id);
+    document.getElementById("game").appendChild(varStar);
+    deleteStarInterval = setTimeout(DeleteStar,1000,varStar.id);
     id++;
 }
 
-function ApagarEstrela(idEstrela){
-    var caminho = document.getElementById(idEstrela).src;
-    caminho = caminho.substr(22,undefined);
-    if(caminho == 'imagens/estrela.png'){
-        document.getElementById('coracao' + vidas).remove();
-        vidas--;
+function DeleteStar(idstar){
+    var path = document.getElementById(idstar).src;
+    path = path.substr(22,undefined);
+    if(path == 'images/star.png'){
+        document.getElementById('heart' + lives).remove();
+        lives--;
     }
-    document.getElementById(idEstrela).remove();
-    if(vidas == 0){
-        FimDeJogo();
+    document.getElementById(idstar).remove();
+    if(lives == 0){
+        EndGame();
     }
 }
 
-function FimDeJogo(){
+function EndGame(){
     document.getElementById("myHeader").style.top = "0px";
-    document.getElementById("fundoEsc").style.visibility = "unset";
-    document.getElementById("pontuacaoAtual").innerHTML = String(pontos);
+    document.getElementById("darkBackground").style.visibility = "unset";
+    document.getElementById("currentScore").innerHTML = String(points);
     document.getElementById("myDropdown").style.display = "block";
-    document.getElementById("myInput").focus();
-    clearInterval(intervalo1);
+    document.getElementById("nameInput").focus();
+    clearInterval(createStarInterval);
 }
 
-function DroparMenu(){
+function DropMenu(){
     if (clicked == false){
         document.getElementById("myDropdown").style.display = "block";
         clicked = true;
@@ -79,15 +79,15 @@ function DroparMenu(){
     }
 }
 
-function SalvarRecord(){
-    nome = document.getElementById("myInput").value;
+function RecordPoints(){
+    userName = document.getElementById("nameInput").value;
 }
 
 function InsertHearts(){
     for (let index = 1; index <= 3; index++) {
         var img = document.createElement("img");
-        img.id = "coracao" + String(index);
-        img.src = "imagens/coracao.png";
+        img.id = "heart" + String(index);
+        img.src = "images/heart.png";
         document.getElementById("ItemHeart" + String(index)).appendChild(img);
     }
 }

@@ -11,42 +11,42 @@
 <body>
     <header id="myHeader">
         <h1>CalmClick</h1>
-        <button class="btn" id="btnPause" onclick="MoverMenu()">
-            <img src="imagens/flecha.png" alt="Abrir Menu">
+        <button class="btn" id="btnPause" onclick="MoveMenu()">
+            <img src="images/arrow.png" alt="Open Menu">
             <span>Pause</span>
         </button>
-        <div class="dropdown">
-            <button class="btn" id="dropbtn" onclick="DroparMenu()" >
-                <img src="imagens/flecha.png" alt="Abrir Pontuacao">
+        <div class="record">
+            <button class="btn" id="dropBtn" onclick="DropMenu()" >
+                <img src="images/arrow.png" alt="Open Record">
                 <span>Record</span> 
             </button>
-            <div id="myDropdown" class="dropdown-content">
-                <p id="suaPontuacao">Your Score: <span id="pontuacaoAtual">00</span></p>
-                <input type="text" placeholder="Digite seu nome!" id="myInput">
-                <button id="salvar" class="btn" onclick="SalvarRecord()">Save</button>
-                <ol id="recordSalvo">
-                    <li class="recordLinha"><span>Nome</span>   <span>Pontuação</span></li>
-                    <li class="recordLinha"><span>Nome</span>   <span>Pontuação</span></li>
-                    <li class="recordLinha"><span>Nome</span>   <span>Pontuação</span></li>
-                    <li class="recordLinha"><span>Nome</span>   <span>Pontuação</span></li>
-                    <li class="recordLinha"><span>Nome</span>   <span>Pontuação</span></li>
+            <div id="myDropdown" class="dropdownContent">
+                <p id="userScoreRecord">Your Score: <span id="currentScore">00</span></p>
+                <input type="text" placeholder="Type your name" id="nameInput">
+                <button id="btnSave" class="btn" onclick="RecordPoints()">Save</button>
+                <ol>
+                    <li><span>Nome</span>   <span>Pontuação</span></li>
+                    <li><span>Nome</span>   <span>Pontuação</span></li>
+                    <li><span>Nome</span>   <span>Pontuação</span></li>
+                    <li><span>Nome</span>   <span>Pontuação</span></li>
+                    <li><span>Nome</span>   <span>Pontuação</span></li>
                 </ol>
             </div>
         </div>
-        <p>Score: <span id="pontos">00</span></p>
-        <p>Speed: 1/<span id="velocidade">1000</span>ms</p>
-        <ul class="vidas"> 
-            <li>Vidas:</li>
-            <li class="coracoes" id="ItemHeart1"></li>
-            <li class="coracoes" id="ItemHeart2" ></li>
-            <li class="coracoes" id="ItemHeart3"></li>
+        <p>Score: <span id="userScore">00</span></p>
+        <p>Speed: 1/<span id="gameSpeed">1000</span>ms</p>
+        <ul class="gameLives"> 
+            <li>Lives:</li>
+            <li class="hearts" id="ItemHeart1"></li>
+            <li class="hearts" id="ItemHeart2" ></li>
+            <li class="hearts" id="ItemHeart3"></li>
         </ul>
     </header>
-    <div class="areaInteracao">
-        <div id="jogo" class="areaJogo">
+    <div class="interactionArea">
+        <div id="game" class="gameArea">
         </div>
-        <div class="fundoEscuro" id="fundoEsc">
-            <img id="btnPlay" src="imagens/play.png" alt="play" onclick="IniciarJogo()">
+        <div class="darkOverlay" id="darkBackground">
+            <img id="btnPlay" src="images/play.png" alt="play" onclick="StartGame()">
         </div>
     </div>
 </body>
