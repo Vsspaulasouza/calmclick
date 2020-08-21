@@ -15,6 +15,10 @@
 
 :star: Record points
 
+## Preview
+
+See the project running by clicking [here](https://calmclick.netlify.app/) 
+
 ## Open tasks
 
 :memo: Fix the bug that causes the record button to change places when clicked
