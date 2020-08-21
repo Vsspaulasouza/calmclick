@@ -14,3 +14,15 @@
 :star: The game itself
 
 :star: Record points
+
+## Open tasks
+
+:memo: Fix the bug that causes the record button to change places when clicked
+
+:memo: Implement the speed change in the game 
+
+:memo: Save high scores 
+
+## License
+
+The [MIT License](https://github.com/Vsspaulasouza/calmclick/blob/master/LICENSE) (MIT)
