@@ -15,6 +15,10 @@
 
 :star: Salvamento dos records
 
+## Preview
+
+Veja o projeto em ação clicando [aqui](https://calmclick.netlify.app/) 
+
 ## Tarefas em aberto
 
 :memo:  Corrigir o bug que faz o botão record mudar de lugar quando clicado
