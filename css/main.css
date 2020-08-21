@@ -41,6 +41,13 @@ header .btn {
     cursor: pointer;
 }
 
+header #btnPause{
+    position: relative;
+    top: 30px;
+    float: left;
+    margin-left: 8px;
+}
+
 header .btn img {
     width: 20px;
     transform: rotate(90deg);
@@ -53,27 +60,29 @@ header .btn span {
     margin-right: 3px;
     margin-top: 4px;
 }
-header #btnPause{
-    position: relative;
-    top: 30px;
-    float: left;
-    margin-left: 8px;
-}
 
-.dropdown {
+header .record {
     position: absolute;
     top: 30px;
     right: 10px;
     display: inline-block;
 }
 
-#myInput {
+header .record .dropdownContent {
+    display: none;
+    position: relative;
+    background-color: rgba(50, 50, 50, 0.096);
+    z-index: 1;
+    padding: 5px 0px;
+}
+
+header .record .dropdownContent #nameInput {
     box-sizing: border-box;
     padding: 10px 10px;
     border: none;
 }
 
-#suaPontuacao{
+header .record .dropdownContent #userScoreRecord{
     top: auto;
     float: left;
     margin-right: unset;
@@ -83,24 +92,12 @@ header #btnPause{
     height: 25px;
 }
 
-#salvar { 
+.header .record .dropdownContent #btnSave { 
     padding: 4px;
     margin-right: 3px;
 }
 
-.dropdown-content {
-    display: none;
-    position: relative;
-    background-color: rgba(50, 50, 50, 0.096);
-    z-index: 1;
-    padding: 5px 0px;
-}
-
-.show{
-    display: block;
-}
-
-header .vidas{
+header .gameLives{
     background-color: rgba(241,239,242,.5);
     list-style-type: none;
     position: relative;
@@ -112,15 +109,15 @@ header .vidas{
     border-radius: 10px;
     box-shadow: 0px 1px 3px 0px rgba(50, 50, 50, 0.3);
 }
-header .vidas li{
+header .gameLives li{
     display: inline;
     padding: 3px;
 }
-header .vidas .coracoes img{
+header .gameLives .hearts img{
     width: 16px;
 }
 
-.areaInteracao {
+.interactionArea {
     margin: 0px;
     padding: 0px;
     width: 100%;
@@ -128,13 +125,13 @@ header .vidas .coracoes img{
     position: relative;
 }
 
-.areaInteracao .areaJogo{
+.interactionArea .gameArea{
     height: 100%;
     width: 100%;
     position: absolute;
 }
 
-.areaInteracao .areaJogo .estrela{
+.interactionArea .gameArea .star{
     width: 50px;
     transition: 1s;
     position: absolute;
@@ -142,7 +139,7 @@ header .vidas .coracoes img{
     cursor: pointer;
 }
 
-.areaInteracao .fundoEscuro{
+.interactionArea .darkOverlay{
     background-color: rgba(50, 50, 50, 0.3);
     position: relative;
     width: 100%;
@@ -150,7 +147,7 @@ header .vidas .coracoes img{
     height: 100%;
 }
 
-.areaInteracao .fundoEscuro #btnPlay{
+.interactionArea .darkOverlay #btnPlay{
     width: 165px;
     position: relative;
     top: 190px;
@@ -158,5 +155,3 @@ header .vidas .coracoes img{
     cursor: pointer;
     z-index: 1;    
 }
-
-
