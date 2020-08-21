@@ -17,7 +17,7 @@
 
 ## Preview
 
-See the project running by clicking [here](https://calmclick.netlify.app/) 
+See the project running by clicking [here](https://calmclick.netlify.app/). 
 
 ## Open tasks
 
