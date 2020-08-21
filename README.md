@@ -3,26 +3,26 @@
 </p>
 <h1 align="center"> Calm Click </h1>
 
-> Project Status: Under developing :warning:
+> Status do projeto: Em desenvolvimento :warning:
 
-## Project Description :video_game:
+## Descrição do Projeto :video_game:
 
-<p align="justify">A simple game, but one that is enjoyable and fun.</p>
+<p align="justify">Um jogo simples, mas que seja agradável e divertido.</p>
 
-## Functionalities 
+## Funcionalidades 
 
-:star: The game itself
+:star: O jogo em si
 
-:star: Record points
+:star: Salvamento dos records
 
-## Open tasks
+## Tarefas em aberto
 
-:memo: Fix the bug that causes the record button to change places when clicked
+:memo:  Corrigir o bug que faz o botão record mudar de lugar quando clicado
 
-:memo: Implement the speed change in the game 
+:memo: Implementar a mudança de velocidade no jogo 
 
-:memo: Save high scores 
+:memo: Salvar as pontuações mais altas
 
-## License
+## Licença 
 
 The [MIT License](https://github.com/Vsspaulasouza/calmclick/blob/master/LICENSE) (MIT)
