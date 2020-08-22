@@ -17,7 +17,7 @@
 
 ## Preview
 
-Veja o projeto rodando clicando [aqui](https://calmclick.netlify.app/).
+Veja uma prévia do projeto clicando [aqui](https://calmclick.netlify.app/).
 
 ## Tarefas em aberto
 
